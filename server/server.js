@@ -17,6 +17,12 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => {
     console.log('socket out');
   });
+
+
+  socket.on('createMessage', (data) => {
+    console.log('Dostałem nessage: ', data);
+    socket.emit('newMessage', data);
+  });
 });
 
 
